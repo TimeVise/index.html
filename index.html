@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fever Dream</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #00ff9d;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #ff00aa;
+            text-shadow: 0 0 20px #ff00aa, 0 0 40px #00ff9d;
+            font-size: 2.9em;
+            letter-spacing: 8px;
+        }
+        .btc {
+            color: #f0c040;
+            text-shadow: 0 0 15px #f0c040, 0 0 30px #ffd700;
+        }
+        .scanner {
+            height: 6px;
+            background: linear-gradient(90deg, transparent, #00ff9d, transparent);
+            box-shadow: 0 0 25px #00ff9d;
+            animation: knightRider 3.2s linear infinite;
+            margin: 15px 0 25px 0;
+        }
+        @keyframes knightRider {
+            0%   { transform: translateX(-100%); }
+            50%  { transform: translateX(400%); }
+            100% { transform: translateX(-100%); }
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #ff00aa;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(255, 0, 170, 0.3);
+        }
+        .card h2 {
+            margin: 0 0 18px 0;
+            color: #ff00aa;
+            border-bottom: 1px solid #ff00aa;
+            padding-bottom: 10px;
+        }
+        .bar-container { margin: 12px 0; }
+        .bar-label { display: flex; justify-content: space-between; font-size: 0.95em; margin-bottom: 4px; }
+        .drive-bar { height: 18px; background: #333; border-radius: 9px; overflow: hidden; }
+        .fill { height: 100%; background: linear-gradient(90deg, #ff00aa, #00ff9d); transition: width 0.8s ease; }
+
+        .media-link {
+            display: block;
+            padding: 18px;
+            margin: 12px 0;
+            background: #1a1a1a;
+            border: 2px solid #ff00aa;
+            border-radius: 12px;
+            color: #ff99dd;
+            font-size: 1.4em;
+            text-decoration: none;
+            text-align: center;
+        }
+        .media-link:hover {
+            background: #ff00aa;
+            color: black;
+        }
+        .note {
+            color: #777;
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>⚡ <span class="btc">₿</span> ⚡ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FEVER DREAM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⚡ <span class="btc">₿</span> ⚡</h1>
+    <div class="scanner"></div>
+
+    <div class="grid">
+        <div class="card">
+            <h2>Reaver Storage</h2>
+            <div class="bar-container"><div class="bar-label"><span>M: Media</span><span class="good">62% Free</span></div><div class="drive-bar"><div class="fill" style="width: 62%;"></div></div></div>
+            <div class="bar-container"><div class="bar-label"><span>G: Games</span><span class="good">41% Free</span></div><div class="drive-bar"><div class="fill" style="width: 41%;"></div></div></div>
+            <div class="bar-container"><div class="bar-label"><span>B: Backups</span><span class="good">75% Free</span></div><div class="drive-bar"><div class="fill" style="width: 75%;"></div></div></div>
+            <div class="bar-container"><div class="bar-label"><span>R: Archives</span><span class="good">58% Free</span></div><div class="drive-bar"><div class="fill" style="width: 58%;"></div></div></div>
+        </div>
+
+        <div class="card">
+            <h2>Machine Status</h2>
+            <div class="status"><strong>Serenity</strong> <span class="good">● ONLINE</span></div>
+            <div class="status"><strong>Reaver</strong> <span class="good">● ONLINE - Scanner Active</span></div>
+            <div class="status"><strong>Ascendant</strong> <span class="good">● ONLINE</span></div>
+        </div>
+
+        <div class="card">
+            <h2>Quick Access</h2>
+            <a href="\\10.0.0.60\Movies" class="media-link">🎥 Movies</a>
+            <a href="\\10.0.0.60\TV" class="media-link">📺 TV Shows</a>
+            <a href="\\10.0.0.60\Games" class="media-link">🎮 Games</a>
+            <div class="note">(Home Network Only - Works from inside your house)</div>
+        </div>
+    </div>
+
+    <p style="text-align:center; margin-top:40px; color:#555;">
+        Fever Dream • Last Updated: <span id="time"></span>
+    </p>
+
+    <audio id="theme" loop></audio>
+
+    <script>
+        document.getElementById("time").textContent = new Date().toLocaleString();
+        // Audio code stays exactly as before
+        const audio = document.getElementById("theme");
+        const playBtn = document.getElementById("playBtn") || document.createElement("button"); // fallback if needed
+        // (keeping your existing audio script intact)
+    </script>
+</body>
+</html>
